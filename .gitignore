@@ -1,0 +1,15 @@
+# Archivos de Roblox Studio generados localmente
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
+*.rbxm
+*.rbxmx
+sourcemap.json
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
