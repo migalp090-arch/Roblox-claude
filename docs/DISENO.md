@@ -1,4 +1,4 @@
-# Documento de diseño (vivo)
+# Egg Lab: documento de diseño (vivo)
 
 Este documento se actualiza a medida que decidimos cosas. Lo marcado como **Propuesta** aún no está decidido.
 
@@ -65,5 +65,6 @@ Lo mínimo para que sea jugable y divertido:
 
 | Fecha | Decisión |
 |---|---|
+| 2026-10-03 | Nombre del juego: **Egg Lab**. |
 | 2026-10-03 | Código en archivos con Rojo y versionado en GitHub. |
 | 2026-10-03 | Servidor autoritativo: el cliente solo pide, el servidor valida y decide. |

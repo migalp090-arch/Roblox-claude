@@ -1,10 +1,13 @@
 {
-  "name": "RobloxGame",
+  "name": "EggLab",
   "tree": {
     "$className": "DataModel",
     "ReplicatedStorage": {
       "Shared": {
         "$path": "src/shared"
+      },
+      "Assets": {
+        "$className": "Folder"
       }
     },
     "ServerScriptService": {
@@ -12,11 +15,37 @@
         "$path": "src/server"
       }
     },
+    "ServerStorage": {
+      "Assets": {
+        "$className": "Folder"
+      }
+    },
     "StarterPlayer": {
       "StarterPlayerScripts": {
         "Client": {
           "$path": "src/client"
         }
+      }
+    },
+    "StarterGui": {
+      "MainGui": {
+        "$className": "ScreenGui",
+        "$properties": {
+          "ResetOnSpawn": false,
+          "IgnoreGuiInset": true,
+          "ZIndexBehavior": "Sibling"
+        }
+      }
+    },
+    "Workspace": {
+      "Map": {
+        "$className": "Folder"
+      },
+      "Spawns": {
+        "$className": "Folder"
+      },
+      "Runtime": {
+        "$className": "Folder"
       }
     }
   }

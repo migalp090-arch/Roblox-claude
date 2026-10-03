@@ -1,4 +1,4 @@
-# Juego de Roblox (acción + construcción + progresión)
+# Egg Lab
 
 Código del juego en Luau, sincronizado con Roblox Studio mediante [Rojo](https://rojo.space).
 
@@ -13,3 +13,6 @@ src/
   client/   -> StarterPlayerScripts.Client      (Controllers/: lógica del jugador)
   shared/   -> ReplicatedStorage.Shared         (Net/, Config/, Util/)
 ```
+
+Definidos en `default.project.json`: `ReplicatedStorage.Assets`, `ServerStorage.Assets`,
+`StarterGui.MainGui` y las carpetas `Workspace.Map`, `Workspace.Spawns`, `Workspace.Runtime`.

@@ -7,6 +7,12 @@
 | `src/server/` | `ServerScriptService.Server` | Lógica del servidor. `Services/` = un ModuleScript por sistema. |
 | `src/client/` | `StarterPlayer.StarterPlayerScripts.Client` | Lógica del jugador. `Controllers/` = un ModuleScript por sistema. |
 | `src/shared/` | `ReplicatedStorage.Shared` | Código y configuración que usan ambos lados. |
+| (project.json) | `ReplicatedStorage.Assets` | Modelos y recursos que el cliente puede ver. |
+| (project.json) | `ServerStorage.Assets` | Recursos que solo usa el servidor (el cliente no los ve). |
+| (project.json) | `StarterGui.MainGui` | ScreenGui principal; las pantallas cuelgan de aquí (`UIController:GetRoot()`). |
+| (project.json) | `Workspace.Map` | Mapa y decorado estático. |
+| (project.json) | `Workspace.Spawns` | Puntos de aparición. |
+| (project.json) | `Workspace.Runtime` | Objetos que crea el servidor durante la partida. |
 
 Mapas, modelos y UI hechos a mano en Studio siguen viviendo en el archivo del juego (`.rbxl`), no en Git.
 Cuando necesitemos guardarlos en el repo los exportaremos como modelos (`.rbxm`) en `assets/`.
