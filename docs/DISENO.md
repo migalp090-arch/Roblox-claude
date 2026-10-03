@@ -46,6 +46,7 @@ Lo mínimo para que sea jugable y divertido:
 |---|---|
 | Red validada (NetService) | Hecho |
 | Datos del jugador (DataService) | Hecho |
+| Coins (sin guardar todavía) | Hecho |
 | Recursos / economía | Pendiente |
 | Construcción | Pendiente |
 | Combate y vida | Pendiente |

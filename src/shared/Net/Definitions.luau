@@ -27,6 +27,9 @@ local Definitions: { [string]: Definition } = {
 	-- Datos del jugador (servidor -> cliente)
 	DataSnapshot = { kind = "Event", direction = "ToClient" },
 	DataChanged = { kind = "Event", direction = "ToClient" },
+
+	-- Moneda (servidor -> cliente)
+	CoinsChanged = { kind = "Event", direction = "ToClient" },
 }
 
 return Definitions

@@ -3,4 +3,8 @@
 
 return {
 	GameName = "Egg Lab",
+
+	-- Coins
+	StartingCoins = 0,
+	MaxCoins = 1e12, -- tope de seguridad
 }
