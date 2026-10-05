@@ -69,3 +69,11 @@ Lo mínimo para que sea jugable y divertido:
 | 2026-10-03 | Nombre del juego: **Egg Lab**. |
 | 2026-10-03 | Código en archivos con Rojo y versionado en GitHub. |
 | 2026-10-03 | Servidor autoritativo: el cliente solo pide, el servidor valida y decide. |
+
+## Decisión: juego de ajedrez (sustituye a las propuestas anteriores)
+
+El proyecto pasa a ser un **ajedrez 1v1 comercial** (aspecto premium, móvil y PC). Las propuestas de acción/construcción de arriba quedan descartadas por ahora.
+- Un tablero por servidor, dos asientos (blancas/negras), resto espectadores.
+- Control de tiempo 10 min + 5 s por jugada (`GameConfig.Chess`). Tablas por acuerdo, triple repetición, 50 jugadas o material insuficiente.
+- Visual: peana de madera, mármol claro y madera oscura, piezas de mármol (blancas) y pizarra (negras) con detalles dorados, iluminación localizada.
+- Sin personaje: el jugador ve el tablero con la cámara del juego.

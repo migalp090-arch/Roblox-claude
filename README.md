@@ -2,6 +2,8 @@
 
 Código del juego en Luau, sincronizado con Roblox Studio mediante [Rojo](https://rojo.space).
 
+Ahora el juego es un **ajedrez 1v1** (ver `docs/ESTADO.md`).
+
 - Empezar: [docs/INSTALACION.md](docs/INSTALACION.md)
 - Diseño del juego: [docs/DISENO.md](docs/DISENO.md)
 - Cómo está organizado el código: [docs/ARQUITECTURA.md](docs/ARQUITECTURA.md)

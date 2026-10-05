@@ -30,6 +30,34 @@ local Definitions: { [string]: Definition } = {
 
 	-- Moneda (servidor -> cliente)
 	CoinsChanged = { kind = "Event", direction = "ToClient" },
+
+	-- Ajedrez: el servidor es la única autoridad (reglas, turnos, relojes, resultado).
+	ChessUpdate = { kind = "Event", direction = "ToClient" }, -- estado completo (+ último movimiento si lo hay)
+	ChessSync = {
+		kind = "Event",
+		direction = "ToServer",
+		args = {},
+		rateLimit = { count = 3, per = 5 },
+	},
+	ChessSit = {
+		kind = "Event",
+		direction = "ToServer",
+		args = { Validate.oneOf({ "white", "black", "solo" }) },
+		rateLimit = { count = 4, per = 3 },
+	},
+	ChessMove = {
+		kind = "Event",
+		direction = "ToServer",
+		-- origen, destino (0..63) y pieza de promoción ("" si no hay)
+		args = { Validate.integer(0, 63), Validate.integer(0, 63), Validate.oneOf({ "", "q", "r", "b", "n" }) },
+		rateLimit = { count = 6, per = 2 },
+	},
+	ChessAction = {
+		kind = "Event",
+		direction = "ToServer",
+		args = { Validate.oneOf({ "resign", "offerDraw", "acceptDraw", "declineDraw", "rematch", "leave" }) },
+		rateLimit = { count = 6, per = 4 },
+	},
 }
 
 return Definitions

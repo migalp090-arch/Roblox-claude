@@ -41,3 +41,28 @@ Para usar otro sistema, se hace `require` directo: `local DataService = require(
 - Servidor: `DataService:Get`, `:Set`, `:Increment`, `:OnLoaded`, `:WaitForData`. `Set` e `Increment` avisan al cliente.
 - Cliente: `DataController:Get`, `:OnChanged`, `:OnReady` (solo lectura).
 - Bloqueo de sesión, reintentos, autoguardado cada 60 s (solo si hay cambios) y guardado al salir y al cerrar el servidor.
+
+## Ajedrez
+
+Un único tablero por servidor. El servidor decide todo; el cliente solo pide y dibuja.
+
+| Archivo | Rol |
+|---|---|
+| `Shared/Chess/Rules.luau` | Motor puro (sin Roblox): estado, movimientos legales, jaque/mate/tablas, notación. Casillas 0..63 (a1 = 0). |
+| `Shared/Chess/PieceFactory.luau` | Modelos 3D de las 32 piezas por código (base en Y = 0, miran a -Z). |
+| `Shared/Chess/SceneBuilder.luau` | Peana, marco, casillas, bandejas, suelo, luces, atmósfera y post-proceso. |
+| `Shared/Config/ChessTheme.luau` | Medidas, colores, materiales y conversión casilla <-> posición. |
+| `Shared/Config/AudioConfig.luau` | Sonidos (Id, volumen, tono). |
+| `Server/Services/MatchService` | Partida: asientos, turnos, relojes, validación, resultado, tablas, revancha. |
+| `Server/Services/SceneService` | Construye la escena una vez en `Workspace.Map.ChessBoard`. |
+| `Server/Services/SetupService` | Desactiva los personajes (`CharacterAutoLoads = false`). |
+| `Client/Controllers/GameController` | Estado recibido (`ChessUpdate`) + peticiones (`ChessSit`, `ChessMove`, `ChessAction`, `ChessSync`). |
+| `Client/Controllers/BoardController` | Piezas, resaltados, animaciones. |
+| `Client/Controllers/InputController` | Clic/toque -> selección -> jugada. |
+| `Client/Controllers/CameraController` | Cámara orbital y vistas. |
+| `Client/Controllers/ChessUIController` + `Client/UI/Kit` | Interfaz. |
+| `Client/Controllers/EffectsController` | Sonido y partículas. |
+| `Client/Chess/Animator` | Animador con una sola conexión a Heartbeat (solo activa mientras anima). |
+
+Flujo: el cliente envía `ChessMove(origen, destino, promoción)` -> `MatchService` lo busca entre los movimientos legales -> aplica, actualiza relojes y estado -> `ChessUpdate` a todos (incluye el último movimiento y `seq` para animarlo).
+Si el cliente se desincroniza, `BoardController` reconstruye el tablero desde el estado del servidor.

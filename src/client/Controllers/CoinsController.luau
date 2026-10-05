@@ -1,8 +1,10 @@
 --!strict
 -- Muestra las Coins del jugador. Solo lee lo que envía el servidor (CoinsChanged).
 
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TweenService = game:GetService("TweenService")
 
+local GameConfig = require(ReplicatedStorage.Shared.Config.GameConfig)
 local Net = require(script.Parent.Parent.Net)
 local UIController = require(script.Parent.UIController)
 
@@ -86,6 +88,9 @@ function CoinsController:Init()
 end
 
 function CoinsController:Start()
+	if not GameConfig.ShowCoins then
+		return
+	end
 	build(UIController:GetRoot())
 	render(false)
 end
