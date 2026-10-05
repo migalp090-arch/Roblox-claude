@@ -46,6 +46,14 @@
       },
       "Runtime": {
         "$className": "Folder"
+      },
+      "$properties": {
+        "StreamingEnabled": false
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "Technology": "Future"
       }
     }
   }
